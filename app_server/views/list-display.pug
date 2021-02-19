@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container.py-5
+    h1= title
+    .d-sm-flex.flex-wrap.justify-content-evenly
+      each movie in movieList
+        .card.mr-sm-4.mb-4.position-relative.onHover-shadow.flex-basis
+          .card-block
+            if(movie.upcoming == true)
+              img.position-absolute(src="/images/soon.png")
+            img.imgSize.rounded(src= movie.img)
+            h3.text-center.pt-2= movie.name
+            .d-flex.justify-content-center.flex-wrap
+              each genre in movie.genres
+                span.badge.badge-danger.text-center.mr-2.mb-2= genre

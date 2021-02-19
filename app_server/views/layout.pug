@@ -1,0 +1,38 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= "MovieNyt"
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/all.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    #page-container
+      nav.navbar.fixed-top.navbar-expand-md.navbar-light
+        .container
+          a.navbar-brand(href='/') MovieNyt
+          button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarMain')
+            span.navbar-toggler-icon
+          #navbarMain.navbar-collapse.collapse
+            ul.navbar-nav.mr-auto
+              li.nav-item.d-md-flex
+                a.nav-link(href='/about/') About
+                a.nav-link(href='/list/') List
+                a.nav-link(href='/display/') Display
+            form.form-inline.my-2.my-lg-0
+              input.form-control.mr-sm-2(placeholder="Search Movies..")
+              button.btn.btn-outline-danger.my-2.my-sm-0 Search
+            button.btn.btn-outline-danger.ml-3 Signin
+
+      .contentSpacing
+        block content
+
+      footer#footer
+        .container.h-100.d-flex.justify-content-center.align-items-center
+          .row
+            .col-12
+              small &copy; Rajith V Gopal 2021
+
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
+    script(src='/javascripts/bootstrap.min.js')
