@@ -9,7 +9,7 @@ block content
           .card-block
             if(movie.upcoming == true)
               img.position-absolute(src="/images/soon.png")
-            img.imgSize.rounded(src= movie.img)
+            img.imgSize.rounded(src= movie.cardImage)
             h3.text-center.pt-2= movie.name
             .d-flex.justify-content-center.flex-wrap
               each genre in movie.genres
