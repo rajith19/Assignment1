@@ -63,13 +63,13 @@ const addNewMovie = function (req, res) {
 }
 
 const doAddNewMovie = function (req, res) {
-    // console.log("ap_seve", req.body)
+    console.log("ap_seve", req.body)
     const path = '/api/movies';
     const postdata = {
         name: req.body.name,
         cardImage: req.body.cardImage,
         genres: req.body.genres,
-        upcoming: req.body.upcoming,
+        upcoming: req.body.inlineRadioOptions,
         price: req.body.price,
         author : req.body.author,
         rating : req.body.rating,
