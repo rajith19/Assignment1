@@ -10,8 +10,9 @@ block content
           img(src=currentMovie.cardImage width=300)
         .d-inline-flex.align-items-start.flex-column
           h1= currentMovie.name
-          each genre in currentMovie.genres
-            span.badge.badge-danger.text-center.mr-2.mb-2= genre
+          .d-flex
+            each genre in currentMovie.genres
+              span.badge.badge-danger.text-center.mr-2.mb-2= genre
           h2  $#{currentMovie.price}
           h1 Review by admin
           h2= currentMovie.reviews[0].author
