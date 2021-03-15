@@ -9,7 +9,7 @@ const reviewSchema = new mongoose.Schema({
         max: 5
     },
     reviewText: String,
-    createdOn: { type: Date, default: Date.now }
+    createdOn: { type: Date, default: Date.now() }
 });
 
 

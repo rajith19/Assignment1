@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    .container.py-5
+      .text-right
+        button.btn.btn-danger.height.mr-5(type='button' data-toggle='modal' data-target='#exampleModal') Delete Movie
+        a(href='/list/') Go Back
+      .d-flex
+        .mr-5
+          img(src=currentMovie.cardImage width=300)
+        .d-inline-flex.align-items-start.flex-column
+          h1= currentMovie.name
+          each genre in currentMovie.genres
+            span.badge.badge-danger.text-center.mr-2.mb-2= genre
+          h2  $#{currentMovie.price}
+          h1 Review by admin
+          h2= currentMovie.reviews[0].author
+          .d-flex
+            - for (let i = 1; i <= currentMovie.reviews[0].rating; i++)
+              i.fas.fa-star
+          h2= currentMovie.reviews[0].reviewText
+      
+      #exampleModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+              h5#exampleModalLabel.modal-title Delete #{currentMovie.name}
+              button.close(type='button' data-dismiss='modal' aria-label='Close')
+                span(aria-hidden='true') &times;
+            .modal-body
+              | Do you really want to delete this  movie?
+            .modal-footer
+              button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+              button.btn.btn-danger.delete-movie(type='button' data-id=currentMovie._id) Delete
+
+  
+

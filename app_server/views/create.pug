@@ -1,0 +1,46 @@
+extends layout
+
+block content
+	.container.py-5
+		.row.d-flex.justify-content-center 
+			.col-8
+				form#addMovie(action="", method="post", role="form")
+					- if (error == "val")
+						.alert.alert-danger(role="alert") All fields required, please try again
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="name") Movie Name
+						.col-12.col-sm-10
+							input#name.form-control(name="name")
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="cardImage") image URL 
+						.col-12.col-sm-10
+							input#cardImage.form-control(name="cardImage")
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="price") Price
+						.col-12.col-sm-10
+							input#price.form-control(name="price")
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="upcoming") Upcoming 
+						.col-12.col-sm-10
+							input#upcoming.form-control(name="upcoming")
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="genres") genres 
+						.col-12.col-sm-10
+							input#genres.form-control(name="genres")
+					.form-group.row
+						h3 Review by admin
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="author") Admin name 
+						.col-12.col-sm-10
+							input#author.form-control(name="author")
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="rating") Rating 
+						.col-12.col-sm-10
+							input#rating.form-control(name="rating")
+					.form-group.row
+						label.col-10.col-sm-2.col-form-label(for="reviewText") Review 
+						.col-12.col-sm-10
+							input#reviewText.form-control(name="reviewText")
+					.form-group.row.d-flex.align-items-center.justify-content-center
+						button.btn.btn-danger.float-right.mr-2 Create
+					a.d-flex.justify-content-center(href='/list/') Go Back

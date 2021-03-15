@@ -12,5 +12,5 @@ const display = function (req, res, next) {
 module.exports = {
     index,
     display,
-} 
+}
 

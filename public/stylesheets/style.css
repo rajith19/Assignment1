@@ -136,6 +136,8 @@ small {
 }
 .imgSize {
   width: 100%;
+  max-height: 323px;
+  height: 323px;
 }
 .bgImage {
   background-image: url("/images/bg.jpg");
@@ -183,4 +185,15 @@ small {
   .flex-basis {
     flex-basis: 30%;
   }
+}
+
+#noUnderline a{
+  text-decoration: none;
+}
+
+.height{
+  height: fit-content;
+}
+.fa-star{
+  color : #FFD700;
 }
